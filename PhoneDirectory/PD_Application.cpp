@@ -90,7 +90,13 @@ void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please com
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
-	// Complete the rest of this function 
+	string removeName = the_directory.remove_entry(name);
+	if (name == removeName) {
+		cout << "Your name has been removed from the directory";
+	}
+	else {
+		cout << "That name does not exist!";
+	}
 	
 }
 
