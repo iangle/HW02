@@ -109,6 +109,27 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		return "";
 	}
 
+	/* Redid the do_remove_entry function so that it checks to see
+	if a name exists and then deletes it if it does*/
+	// isaac
+	void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please complete the function do_remove_entry - Ed/Kent
+	{
+
+		string name;
+		// asking user for name
+		cout << "Enter name: ";
+		getline(cin, name);
+		string removeName = the_directory.remove_entry(name);
+		// checking to see if the name exists in the directory
+		if (name == removeName) {
+			cout << "Your name has been removed from the directory";
+		}
+		else {
+			cout << "That name does not exist!";
+		}
+
+	}
+
 void do_save(Phone_Directory& the_directory)
 {
 	the_directory.save();
