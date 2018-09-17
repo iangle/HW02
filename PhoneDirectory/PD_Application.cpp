@@ -84,21 +84,30 @@ void do_lookup_entry(Phone_Directory& the_directory)
 		cout << name << " is not in the directory\n";
 	}
 }
+/** Remove an entry
+post: The name is no longer in the directory
+@param name The name to be removed
+@return That person's name or an empty string
+if not in the directory
+*/
+//trevor:
 
-void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please complete the function do_remove_entry - Ed/Kent
+string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
-	string name;
-	cout << "Enter name: ";
-	getline(cin, name);
-	string removeName = the_directory.remove_entry(name);
-	if (name == removeName) {
-		cout << "Your name has been removed from the directory";
+	string number = "";
+	int index = find(name);
+	if (find(name))
+	{
+		for (int i = index; i < size - 1; i++)
+		{
+			the_directory[i] = the_directory[i + 1];
+			return number;
+		}
 	}
-	else {
-		cout << "That name does not exist!";
+	else
+	{
+		return "";
 	}
-	
-}
 
 void do_save(Phone_Directory& the_directory)
 {
